@@ -1,10 +1,11 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=Trackballs
 Comment=Game similar to Marble Madness
 Comment[pl]=Gra podobna do Marble Madness
-Icon=trackballs.png
 Exec=trackballs
+Icon=trackballs.png
 Terminal=false
-Type=Game;ArcadeGame;
+Type=Application
+Categories=Game;ArcadeGame;
+Encoding=UTF-8
 # vi: encoding=utf-8
