@@ -7,3 +7,4 @@ Icon=trackballs.png
 Exec=/usr/games/trackballs
 Terminal=false
 Type=Application
+# vi: encoding=utf-8
