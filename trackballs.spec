@@ -1,12 +1,9 @@
 #
-# TODO:
-#   -fix problems with GLU in the other way than "ln -s /usr/{X11R6,}/lib/GLU.so"
-#
 Summary:	Game similar to Marble Madness
 Summary(pl):	Gra podobna do Marble Madness
 Name:		trackballs
 Version:	1.0.0
-Release:	0.9
+Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -14,6 +11,7 @@ Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 Source1:	http://dl.sourceforge.net/%{name}/tb_design.ogg
 Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
 Source3:	%{name}.desktop
+Patch0:		%{name}-install.patch
 URL:		http://trackballs.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -25,7 +23,6 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_bindir	%{_prefix}/games
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
 
 %description
@@ -47,7 +44,7 @@ nastêpnego, trudniejszego, toru. Chyba ¿e skoñczy siê czas.
 Summary:	Background music for trackballs
 Summary(pl):	Muzyka w tle dla trackballs
 Group:		X11/Applications/Games
-Requires:	%{name}
+Requires:	%{name}-%{version}
 
 %description music
 Background music for trackballs.
@@ -57,7 +54,7 @@ Muzyka w tle dla trackballs.
 
 %prep
 %setup -q
-#%%patch0 -p1
+%patch0 -p1
 
 %build
 %{__perl} -pi -e "s,dnl LIBS=\"-lGLU,LIBS=\"-lGLU,g" configure.ac
