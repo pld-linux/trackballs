@@ -1,18 +1,21 @@
 #
+# TODO:
+#   -fix problems with GLU in the other way than "ln -s /usr/{X11R6,}/lib/GLU.so"
+#
 Summary:	Game similar to Marble Madness
 Summary(pl):	Gra podobna do Marble Madness
 Name:		trackballs
-Version:	0.9.0
-Release:	1
+Version:	1.0.0
+Release:	0.9
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	36385b18f6062652b656d08d18e38b24
+# Source0-md5:	0d3ce4903aa60fba18c0e8c02b3cd563
 Source1:	http://dl.sourceforge.net/%{name}/tb_design.ogg
 Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
 Source3:	%{name}.desktop
-Patch0:		%{name}-chown.patch
 URL:		http://trackballs.sourceforge.net/
+BuildRequires:	autoconf
 BuildRequires:	guile-devel >= 1.6.3
 BuildRequires:	libstdc++-devel
 BuildRequires:	OpenGL-devel
@@ -53,10 +56,12 @@ Muzyka w tle dla trackballs.
 
 %prep
 %setup -q
-%patch0 -p1
+#%%patch0 -p1
 
 %build
+%{__autoconf}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
+LDFLAGS="-I/usr/include/GL"
 %configure \
 	--with-highscores=/var/games/trackballs
 
