@@ -44,7 +44,7 @@ nastêpnego, trudniejszego, toru. Chyba ¿e skoñczy siê czas.
 Summary:	Background music for trackballs
 Summary(pl):	Muzyka w tle dla trackballs
 Group:		X11/Applications/Games
-Requires:	%{name}-%{version}
+Requires:	%{name} = %{version}
 
 %description music
 Background music for trackballs.
