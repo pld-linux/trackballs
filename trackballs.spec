@@ -16,6 +16,7 @@ Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
 Source3:	%{name}.desktop
 URL:		http://trackballs.sourceforge.net/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	guile-devel >= 1.6.3
 BuildRequires:	libstdc++-devel
 BuildRequires:	OpenGL-devel
@@ -59,23 +60,27 @@ Muzyka w tle dla trackballs.
 #%%patch0 -p1
 
 %build
+%{__perl} -pi -e "s,dnl LIBS=\"-lGLU,LIBS=\"-lGLU,g" configure.ac
+%{__aclocal}
+%{__autoheader}
 %{__autoconf}
+%{__automake}
 CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
-LDFLAGS="-I/usr/include/GL"
 %configure \
-	--with-highscores=/var/games/trackballs
+	--with-highscores=/var/games/trackballs \
+	LDFLAGS="%{rpmldflags} -L/usr/X11R6/%{_lib}"
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_applnkdir}/Games,%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_applnkdir}/Games
+install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
 install share/icons/trackballs-64x64.png $RPM_BUILD_ROOT%{_pixmapsdir}/trackballs.png
 
 %clean
@@ -94,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man6/*
 %attr(664,root,games) %config(noreplace) %verify(not,md5,size,mtime) /var/games/trackballs
 
-%{_applnkdir}/Games/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 
 %files music
