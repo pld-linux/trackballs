@@ -12,14 +12,15 @@ Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
 Source3:	%{name}.desktop
 Patch0:		%{name}-install.patch
 URL:		http://trackballs.sourceforge.net/
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	guile-devel >= 1.6.3
-BuildRequires:	libstdc++-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	guile-devel >= 1.6.3
+BuildRequires:	libstdc++-devel
+BuildRequires:	perl-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreqdep	libGL.so.1 libGLU.so.1 libGLcore.so.1
