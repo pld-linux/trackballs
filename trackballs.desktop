@@ -4,5 +4,5 @@ Comment=Game similar to Marble Madness
 Comment[pl]=Gra podobna do Marble Madness
 Icon=trackballs.png
 Exec=/usr/games/trackballs
-Terminal=0
+Terminal=false
 Type=Application
