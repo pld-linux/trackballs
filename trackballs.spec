@@ -6,10 +6,10 @@ Version:	0.9.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	http://dl.sf.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	36385b18f6062652b656d08d18e38b24
-Source1:	http://dl.sf.net/%{name}/tb_design.ogg
-Source2:	http://dl.sf.net/%{name}/tb_genesis.ogg
+Source1:	http://dl.sourceforge.net/%{name}/tb_design.ogg
+Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
 Source3:	%{name}.desktop
 Patch0:		%{name}-chown.patch
 URL:		http://trackballs.sourceforge.net/
