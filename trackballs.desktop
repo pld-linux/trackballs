@@ -6,5 +6,5 @@ Comment[pl]=Gra podobna do Marble Madness
 Icon=trackballs.png
 Exec=/usr/games/trackballs
 Terminal=false
-Type=Application
+Type=Game;ArcadeGame;
 # vi: encoding=utf-8
