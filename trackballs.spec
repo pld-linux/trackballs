@@ -1,4 +1,3 @@
-#
 Summary:	Game similar to Marble Madness
 Summary(pl):	Gra podobna do Marble Madness
 Name:		trackballs
@@ -44,7 +43,7 @@ nastêpnego, trudniejszego, toru. Chyba ¿e skoñczy siê czas.
 Summary:	Background music for trackballs
 Summary(pl):	Muzyka w tle dla trackballs
 Group:		X11/Applications/Games
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description music
 Background music for trackballs.
@@ -73,7 +72,9 @@ CXXFLAGS="%{rpmcflags} -fno-rtti -fno-exceptions"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
 
