@@ -1,0 +1,29 @@
+diff -ruN trackballs-0.9.0./share/Makefile.am trackballs-0.9.0/share/Makefile.am
+--- trackballs-0.9.0./share/Makefile.am	Mon Mar 17 14:24:08 2003
++++ trackballs-0.9.0/share/Makefile.am	Thu Apr  3 02:03:48 2003
+@@ -3,7 +3,5 @@
+ EXTRA_DIST = $(pkgdata_DATA) trackballs.6
+ 
+ install-pkgdataDATA:
+-	install -D -m666 -g games highScores		$(DESTDIR)@with_highscores@
+-	install -D -m644 trackballs.6	$(DESTDIR)$(mandir)/man6/trackballs.6
+-	chgrp -R games			$(DESTDIR)$(pkgdatadir)/levels
+-	chmod -R g+r			$(DESTDIR)$(pkgdatadir)/levels
++	install -D highScores		$(DESTDIR)@with_highscores@
++	install -D trackballs.6	$(DESTDIR)$(mandir)/man6/trackballs.6
+diff -ruN trackballs-0.9.0./share/Makefile.in trackballs-0.9.0/share/Makefile.in
+--- trackballs-0.9.0./share/Makefile.in	Mon Mar 31 22:03:09 2003
++++ trackballs-0.9.0/share/Makefile.in	Thu Apr  3 02:04:03 2003
+@@ -338,10 +338,8 @@
+ 
+ 
+ install-pkgdataDATA:
+-	install -D -m666 -g games highScores		$(DESTDIR)@with_highscores@
+-	install -D -m644 trackballs.6	$(DESTDIR)$(mandir)/man6/trackballs.6
+-	chgrp -R games			$(DESTDIR)$(pkgdatadir)/levels
+-	chmod -R g+r			$(DESTDIR)$(pkgdatadir)/levels
++	install -D highScores		$(DESTDIR)@with_highscores@
++	install -D trackballs.6	$(DESTDIR)$(mandir)/man6/trackballs.6
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
