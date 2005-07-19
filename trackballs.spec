@@ -8,9 +8,13 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	4d1c4be3274ac88038bc03e2d470546c
 Source1:	http://dl.sourceforge.net/%{name}/tb_design.ogg
+# Source1-md5:	5623321cd954471c9fe16c02b7f166ca
 Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
+# Source2-md5:	3f00e13798d5bdce40ec2807f3ea1889
 Source3:	http://dl.sourceforge.net/%{name}/tb_hrluebke.ogg
+# Source3-md5:	ab033eac91054ed9700f6e0a8e2f1280
 Source4:	http://dl.sourceforge.net/%{name}/tb_plinkeplanke.ogg
+# Source4-md5:	5a968fb86cc43fa08bbe323b63d0a457
 Source5:	%{name}.desktop
 Patch0:		%{name}-install.patch
 URL:		http://trackballs.sourceforge.net/
