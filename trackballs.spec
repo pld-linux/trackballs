@@ -8,9 +8,9 @@ Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	4d1c4be3274ac88038bc03e2d470546c
 Source1:	http://dl.sourceforge.net/%{name}/tb_design.ogg
-# Source1-md5:	5623321cd954471c9fe16c02b7f166ca
+# Source1-md5:	5a8911006ca2be3b3571875ce34a5105
 Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
-# Source2-md5:	3f00e13798d5bdce40ec2807f3ea1889
+# Source2-md5:	2d254de734c8d1c07ebd0c8d6fb893c0
 Source3:	http://dl.sourceforge.net/%{name}/tb_hrluebke.ogg
 # Source3-md5:	ab033eac91054ed9700f6e0a8e2f1280
 Source4:	http://dl.sourceforge.net/%{name}/tb_plinkeplanke.ogg
