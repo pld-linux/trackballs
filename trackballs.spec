@@ -1,15 +1,17 @@
 Summary:	Game similar to Marble Madness
 Summary(pl):	Gra podobna do Marble Madness
 Name:		trackballs
-Version:	1.0.0
+Version:	1.1.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	0d3ce4903aa60fba18c0e8c02b3cd563
+# Source0-md5:	4d1c4be3274ac88038bc03e2d470546c
 Source1:	http://dl.sourceforge.net/%{name}/tb_design.ogg
 Source2:	http://dl.sourceforge.net/%{name}/tb_genesis.ogg
-Source3:	%{name}.desktop
+Source3:	http://dl.sourceforge.net/%{name}/tb_hrluebke.ogg
+Source4:	http://dl.sourceforge.net/%{name}/tb_plinkeplanke.ogg
+Source5:	%{name}.desktop
 Patch0:		%{name}-install.patch
 URL:		http://trackballs.sourceforge.net/
 BuildRequires:	OpenGL-devel
@@ -18,6 +20,7 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gettext-devel
 BuildRequires:	guile-devel >= 1.6.3
 BuildRequires:	libstdc++-devel
 BuildRequires:	perl-base
@@ -53,11 +56,12 @@ Background music for trackballs.
 Muzyka w tle dla trackballs.
 
 %prep
-%setup -q
+%setup -q -a1
 %patch0 -p1
 
 %build
 %{__perl} -pi -e "s,dnl LIBS=\"-lGLU,LIBS=\"-lGLU,g" configure.ac
+%{__gettextize}
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
@@ -78,14 +82,18 @@ install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
 install %{SOURCE2} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
+install %{SOURCE3} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
+install %{SOURCE4} $RPM_BUILD_ROOT%{_datadir}/%{name}/music
 
-install %{SOURCE3} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE5} $RPM_BUILD_ROOT%{_desktopdir}
 install share/icons/trackballs-64x64.png $RPM_BUILD_ROOT%{_pixmapsdir}/trackballs.png
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog FAQ README README.html TODO
 %attr(2755,root,games) %{_bindir}/trackballs
