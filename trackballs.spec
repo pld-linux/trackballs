@@ -60,7 +60,7 @@ Background music for trackballs.
 Muzyka w tle dla trackballs.
 
 %prep
-%setup -q -a1
+%setup -q
 %patch0 -p1
 
 %build
