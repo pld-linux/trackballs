@@ -109,7 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/levels
 %{_datadir}/%{name}/sfx
 %{_mandir}/man6/*
-%attr(664,root,games) %config(noreplace) %verify(not,md5,size,mtime) /var/games/trackballs
+%attr(664,root,games) %config(noreplace) %verify(not md5 mtime size) /var/games/trackballs
 
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
