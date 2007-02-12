@@ -1,5 +1,5 @@
 Summary:	Game similar to Marble Madness
-Summary(pl):	Gra podobna do Marble Madness
+Summary(pl.UTF-8):   Gra podobna do Marble Madness
 Name:		trackballs
 Version:	1.1.0
 Release:	1
@@ -40,23 +40,23 @@ obstacles the player collects points. When the ball reaches the
 destination it continues to the next, more difficult track - unless
 the time runs out.
 
-%description -l pl
-Trackballs jest prost± gr± podobn± do klasycznej Marble Madness
-napisanej na Amigê w latach 80-ych. Gracz zdobywa punkty steruj±c
-marmurow± kulk± w labiryncie wype³nionym okrutnymi m³otami, ka³u¿ami
-kwasu i innymi przeszkodami. Gdy kilka osi±gnie cel, przenosi siê do
-nastêpnego, trudniejszego, toru. Chyba ¿e skoñczy siê czas.
+%description -l pl.UTF-8
+Trackballs jest prostÄ… grÄ… podobnÄ… do klasycznej Marble Madness
+napisanej na AmigÄ™ w latach 80-ych. Gracz zdobywa punkty sterujÄ…c
+marmurowÄ… kulkÄ… w labiryncie wypeÅ‚nionym okrutnymi mÅ‚otami, kaÅ‚uÅ¼ami
+kwasu i innymi przeszkodami. Gdy kilka osiÄ…gnie cel, przenosi siÄ™ do
+nastÄ™pnego, trudniejszego, toru. Chyba Å¼e skoÅ„czy siÄ™ czas.
 
 %package music
 Summary:	Background music for trackballs
-Summary(pl):	Muzyka w tle dla trackballs
+Summary(pl.UTF-8):   Muzyka w tle dla trackballs
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
 %description music
 Background music for trackballs.
 
-%description music -l pl
+%description music -l pl.UTF-8
 Muzyka w tle dla trackballs.
 
 %prep
