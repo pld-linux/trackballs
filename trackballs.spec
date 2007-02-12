@@ -1,5 +1,5 @@
 Summary:	Game similar to Marble Madness
-Summary(pl.UTF-8):   Gra podobna do Marble Madness
+Summary(pl.UTF-8):	Gra podobna do Marble Madness
 Name:		trackballs
 Version:	1.1.0
 Release:	1
@@ -49,7 +49,7 @@ następnego, trudniejszego, toru. Chyba że skończy się czas.
 
 %package music
 Summary:	Background music for trackballs
-Summary(pl.UTF-8):   Muzyka w tle dla trackballs
+Summary(pl.UTF-8):	Muzyka w tle dla trackballs
 Group:		X11/Applications/Games
 Requires:	%{name} = %{version}-%{release}
 
