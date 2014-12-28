@@ -24,7 +24,7 @@ BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	guile-devel >= 1.6.3
 BuildRequires:	libstdc++-devel
 BuildRequires:	perl-base
