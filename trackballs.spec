@@ -61,7 +61,7 @@ Muzyka w tle dla trackballs.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %{__perl} -pi -e "s,dnl LIBS=\"-lGLU,LIBS=\"-lGLU,g" configure.ac
 
